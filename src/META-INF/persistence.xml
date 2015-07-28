@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="myDataBase">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <!--put here all the domain classes to be persisted in database-->
+        <class>myapp.model.Person</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:./db/myDataBase"/>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value=""/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"></property>
+
+            <!-- uncomment next 2 lines to see the databse logs-->
+            <!-- <property name="eclipselink.logging.level.sql" value="FINE"/>
+             <property name="eclipselink.logging.parameters" value="true"/>-->
+
+        </properties>
+    </persistence-unit>
+</persistence>
